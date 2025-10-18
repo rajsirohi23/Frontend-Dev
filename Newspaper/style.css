@@ -1,0 +1,49 @@
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #f4f0e6;
+  padding: 40px 10%;
+  color: #333;
+}
+
+.magazine {
+  column-count: 3;
+  column-gap: 40px;
+  column-rule: 1px solid #ccc;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.main-heading {
+  column-span: all;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.float-left {
+  width: 150px;
+  height: auto;
+  float: left;
+  margin: 0 20px 20px 0;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .magazine {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .magazine {
+    column-count: 1;
+  }
+
+  .float-left {
+    float: none;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+}

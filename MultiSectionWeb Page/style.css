@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 0.5em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  margin-top: 120px;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.about {
+  background: #f9f9f9;
+  border-top: 5px solid #2c3e50;
+}
+
+.places {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  color: #222;
+  background-attachment: fixed;
+}
+
+.culture {
+  background: radial-gradient(circle, #a1c4fd, #c2e9fb);
+  background-attachment: fixed;
+  color: #222;
+}
+
+.food {
+  background: url('paris.jpg') center/cover no-repeat;
+  color: white;
+  background-attachment: fixed;
+}
+
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
