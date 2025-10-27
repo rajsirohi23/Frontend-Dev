@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Flip Animation</title>
+  <style>
+    /* --- Center the card using Flexbox --- */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+    }
+
+    /* --- Card Container with Perspective --- */
+    .card {
+      width: 300px;
+      height: 400px;
+      perspective: 1000px; /* Adds 3D depth effect */
+    }
+
+    /* --- Inner Card that will Rotate --- */
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d; /* Enables 3D flipping */
+    }
+
+    /* --- Flip effect on hover --- */
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* --- Front and Back Faces --- */
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden; /* Hides the backside when facing away */
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* --- Front Side --- */
+    .card-front {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+    }
+
+    .card-front h2 {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    /* --- Back Side --- */
+    .card-back {
+      background-color: #3498db;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card-back p {
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front Side -->
+      <div class="card-front">
+        <img src="image.jpeg" alt="Tech Image">
+        <h2>Tech Innovations</h2>
+      </div>
+
+      <!-- Back Side -->
+      <div class="card-back">
+        <h2>About</h2>
+        <p>Explore cutting-edge innovations and breakthroughs in modern technology shaping the future.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

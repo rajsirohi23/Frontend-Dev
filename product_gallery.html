@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Gallery</title>
+  <style>
+    /* --- Basic Page Styling --- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+      text-align: center;
+    }
+
+    /* --- Grid Layout --- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    /* --- Product Card --- */
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 250px; /* Equal height for all cards */
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      font-size: 18px;
+      color: #333;
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #007b5e;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* --- Responsive Layouts --- */
+    @media (max-width: 1000px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Product Gallery</h1>
+
+  <div class="gallery">
+    <div class="card">
+      <h2>Wireless Headphones</h2>
+      <p>$99</p>
+    </div>
+    <div class="card">
+      <h2>Smart Watch</h2>
+      <p>$149</p>
+    </div>
+    <div class="card">
+      <h2>Bluetooth Speaker</h2>
+      <p>$79</p>
+    </div>
+    <div class="card">
+      <h2>Gaming Mouse</h2>
+      <p>$59</p>
+    </div>
+    <div class="card">
+      <h2>Mechanical Keyboard</h2>
+      <p>$129</p>
+    </div>
+    <div class="card">
+      <h2>External SSD</h2>
+      <p>$199</p>
+    </div>
+    <div class="card">
+      <h2>4K Monitor</h2>
+      <p>$299</p>
+    </div>
+    <div class="card">
+      <h2>Noise Cancelling Earbuds</h2>
+      <p>$89</p>
+    </div>
+  </div>
+</body>
+</html>

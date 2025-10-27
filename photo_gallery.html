@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Photo Gallery</title>
+  <style>
+    /* --- Basic Page Styling --- */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* --- Grid Container --- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    /* --- Each Figure --- */
+    figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* --- Images --- */
+    figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease; /* Smooth zoom */
+    }
+
+    figure:hover img {
+      transform: scale(1.1); /* Slight zoom on hover */
+    }
+
+    /* --- Captions --- */
+    figcaption {
+      padding: 10px;
+      background: #fff;
+      font-weight: 500;
+      color: #444;
+    }
+
+    /* --- Responsive Padding --- */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Photo Gallery</h1>
+
+  <div class="gallery">
+    <figure>
+      <img src="Waterfall.jpg" alt="Nature 1">
+      <figcaption>Beautiful Waterfall</figcaption>
+    </figure>
+
+    <figure>
+      <img src="Majestic_mountains.jpeg" alt="Nature 2">
+      <figcaption>Majestic Mountains</figcaption>
+    </figure>
+
+    <figure>
+      <img src="peaceful_forest.jpg" alt="Nature 3">
+      <figcaption>Peaceful Forest</figcaption>
+    </figure>
+
+    <figure>
+      <img src="Sunny_beach.jpg" alt="Nature 4">
+      <figcaption>Sunny Beach</figcaption>
+    </figure>
+
+    <figure>
+      <img src="golden_desert.jpg" alt="Nature 5">
+      <figcaption>Golden Desert</figcaption>
+    </figure>
+
+    <figure>
+      <img src="flowing_river.jpg" alt="Nature 6">
+      <figcaption>Flowing River</figcaption>
+    </figure>
+
+    <figure>
+      <img src="Calm_sky.jpg" alt="Nature 7">
+      <figcaption>Calm Sky</figcaption>
+    </figure>
+
+    <figure>
+      <img src="colorful_flower.jpg" alt="Nature 8">
+      <figcaption>Colorful Flowers</figcaption>
+    </figure>
+  </div>
+</body>
+</html>
