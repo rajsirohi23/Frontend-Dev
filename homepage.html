@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage Layout</title>
   <style>
-    /* --- Global Styles --- */
+
     * {
       margin: 0;
       padding: 0;
@@ -19,12 +19,12 @@
       min-height: 100vh;
     }
 
-    /* --- Header --- */
+
     header {
       background-color: #333;
       color: white;
       display: flex;
-      justify-content: space-around; /* evenly spaced navigation links */
+      justify-content: space-around; 
       align-items: center;
       padding: 20px;
     }
@@ -40,7 +40,6 @@
       color: #00bcd4;
     }
 
-    /* --- Main Section --- */
     main {
       flex: 1;
       display: flex;
@@ -49,7 +48,7 @@
       gap: 40px;
       padding: 40px;
       background-color: #f4f4f4;
-      flex-wrap: wrap; /* ensures wrapping on smaller screens */
+      flex-wrap: wrap;
     }
 
     .box {
@@ -83,7 +82,7 @@
       width: 80%;
     }
 
-    /* --- Footer --- */
+
     footer {
       background-color: #333;
       color: white;
@@ -91,10 +90,10 @@
       padding: 15px 0;
       font-size: 14px;
       width: 100%;
-      margin-top: auto; /* ensures footer stays at bottom */
+      margin-top: auto; 
     }
 
-    /* --- Responsive --- */
+
     @media (max-width: 800px) {
       main {
         flex-direction: column;
@@ -108,14 +107,12 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </header>
 
-  <!-- Main Section -->
   <main>
     <div class="box" id="services">
       <h2>Services</h2>
@@ -131,9 +128,9 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 Ekta Gupta. All rights reserved.
   </footer>
 </body>
 </html>
+
