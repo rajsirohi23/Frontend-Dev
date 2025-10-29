@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Flex + Grid Layout</title>
   <style>
-    /* --- Reset and Base Styles --- */
     * {
       margin: 0;
       padding: 0;
@@ -21,7 +20,6 @@
       min-height: 100vh;
     }
 
-    /* --- Header --- */
     header {
       background-color: #3498db;
       color: white;
@@ -34,7 +32,7 @@
     header .logo {
       font-size: 1.8em;
       font-weight: bold;
-      animation: fadeInUp 1.5s ease-in-out; /* Animated title */
+      animation: fadeInUp 1.5s ease-in-out;
     }
 
     nav ul {
@@ -54,16 +52,14 @@
       color: #dfe6e9;
     }
 
-    /* --- Main Layout using Grid --- */
     main {
       display: grid;
-      grid-template-columns: 2fr 1fr; /* Article + Sidebar */
+      grid-template-columns: 2fr 1fr; 
       gap: 20px;
       padding: 30px;
       flex-grow: 1;
     }
 
-    /* --- Article Section --- */
     article {
       background-color: white;
       padding: 20px;
@@ -76,7 +72,6 @@
       color: #2c3e50;
     }
 
-    /* --- Flexbox inside Article --- */
     .article-boxes {
       display: flex;
       gap: 15px;
@@ -98,7 +93,6 @@
       transform: scale(1.05);
     }
 
-    /* --- Sidebar --- */
     aside {
       background-color: #ffffff;
       padding: 20px;
@@ -115,7 +109,6 @@
       padding-left: 20px;
     }
 
-    /* --- Footer --- */
     footer {
       background-color: #2c3e50;
       color: white;
@@ -124,7 +117,6 @@
       margin-top: auto;
     }
 
-    /* --- Keyframes Animation --- */
     @keyframes fadeInUp {
       0% {
         opacity: 0;
@@ -136,10 +128,9 @@
       }
     }
 
-    /* --- Responsive Layout --- */
     @media (max-width: 800px) {
       main {
-        grid-template-columns: 1fr; /* Stack Article & Sidebar */
+        grid-template-columns: 1fr; 
       }
 
       header {
@@ -156,7 +147,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="logo">MyWeb<span style="color:#f1c40f;">Page</span></div>
     <nav>
@@ -169,9 +159,7 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- Article -->
     <article>
       <h2>Welcome to My Blog</h2>
       <p>This is a sample responsive webpage built using a combination of Flexbox and CSS Grid. It adapts beautifully to any screen size.</p>
@@ -183,7 +171,6 @@
       </div>
     </article>
 
-    <!-- Sidebar -->
     <aside>
       <h3>Categories</h3>
       <ul>
@@ -195,10 +182,10 @@
     </aside>
   </main>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 MyWebPage | All Rights Reserved
   </footer>
 
 </body>
 </html>
+
