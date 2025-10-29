@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Gallery</title>
   <style>
-    /* --- Basic Page Styling --- */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,7 +21,6 @@
       text-align: center;
     }
 
-    /* --- Grid Layout --- */
     .gallery {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -31,7 +29,6 @@
       max-width: 1200px;
     }
 
-    /* --- Product Card --- */
     .card {
       background-color: white;
       border-radius: 10px;
@@ -40,7 +37,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 250px; /* Equal height for all cards */
+      height: 250px; 
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
@@ -64,7 +61,6 @@
       margin: 0;
     }
 
-    /* --- Responsive Layouts --- */
     @media (max-width: 1000px) {
       .gallery {
         grid-template-columns: repeat(2, 1fr);
@@ -117,3 +113,4 @@
   </div>
 </body>
 </html>
+
