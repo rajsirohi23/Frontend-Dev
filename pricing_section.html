@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing Section</title>
   <style>
-    /* --- Global Reset --- */
     * {
       margin: 0;
       padding: 0;
@@ -21,7 +20,6 @@
       min-height: 100vh;
     }
 
-    /* --- Pricing Section --- */
     .pricing-container {
       display: flex;
       justify-content: center;
@@ -32,7 +30,6 @@
       animation: fadeIn 1s ease-in-out;
     }
 
-    /* --- Card Base --- */
     .card {
       background-color: white;
       border-radius: 10px;
@@ -49,14 +46,12 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    /* --- Highlighted Middle Card --- */
     .card.featured {
       background-color: #007bff;
       color: white;
       transform: scale(1.05);
     }
 
-    /* --- Card Content --- */
     .card h2 {
       margin-bottom: 15px;
       font-size: 22px;
@@ -103,7 +98,6 @@
       background-color: #555;
     }
 
-    /* --- Fade-In Animation --- */
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -115,7 +109,6 @@
       }
     }
 
-    /* --- Responsive Design --- */
     @media (max-width: 750px) {
       .pricing-container {
         flex-direction: column;
@@ -135,7 +128,6 @@
 </head>
 <body>
   <div class="pricing-container">
-    <!-- Basic Plan -->
     <div class="card">
       <h2>Basic</h2>
       <p class="price">$19/month</p>
@@ -147,7 +139,6 @@
       <button>Choose Plan</button>
     </div>
 
-    <!-- Featured Plan -->
     <div class="card featured">
       <h2>Pro</h2>
       <p class="price">$49/month</p>
@@ -159,7 +150,6 @@
       <button>Get Started</button>
     </div>
 
-    <!-- Premium Plan -->
     <div class="card">
       <h2>Enterprise</h2>
       <p class="price">$99/month</p>
@@ -173,3 +163,4 @@
   </div>
 </body>
 </html>
+
