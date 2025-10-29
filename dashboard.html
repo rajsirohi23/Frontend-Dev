@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Layout</title>
   <style>
-    /* --- Reset & Base Styles --- */
     * {
       margin: 0;
       padding: 0;
@@ -26,7 +25,6 @@
       padding: 20px;
     }
 
-    /* --- Header --- */
     header {
       grid-area: header;
       background-color: #2c3e50;
@@ -45,7 +43,6 @@
       color: #bdc3c7;
     }
 
-    /* --- Sidebar --- */
     aside {
       grid-area: sidebar;
       background-color: #34495e;
@@ -75,7 +72,6 @@
       background-color: #2c3e50;
     }
 
-    /* --- Main Content --- */
     main {
       grid-area: main;
       display: grid;
@@ -101,13 +97,11 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* --- Box that spans 2 columns --- */
     .wide {
       grid-column: span 2;
       background-color: #e3f2fd;
     }
 
-    /* --- Responsive Design --- */
     @media (max-width: 900px) {
       body {
         grid-template-columns: 1fr;
@@ -130,13 +124,12 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     Dashboard Overview
     <span>Welcome, Ekta</span>
   </header>
 
-  <!-- Sidebar -->
+
   <aside>
     <h3>Navigation</h3>
     <nav>
@@ -147,7 +140,6 @@
     </nav>
   </aside>
 
-  <!-- Main Content -->
   <main>
     <div class="box">Statistics</div>
     <div class="box">Revenue</div>
@@ -156,3 +148,4 @@
   </main>
 </body>
 </html>
+
