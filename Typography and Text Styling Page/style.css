@@ -1,0 +1,54 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    margin: 40px;
+    line-height: 1.8;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+article {
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+mark {
+    background-color: #ffeb3b;
+    color: #000;
+    padding: 0 3px;
+}
+
+strong {
+    color: #e91e63;
+    font-weight: 700;
+}
+
+em {
+    color: #3f51b5;
+    font-style: italic;
+}
+
+article p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+article p::first-line {
+    font-weight: 600;
+    color: #4caf50;
+}
+
+p {
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
