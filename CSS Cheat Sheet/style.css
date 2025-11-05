@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-8px);
+    background: #eaeaea;
+}
+
+.box h2 {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+    .box {
+        padding: 20px;
+    }
+
+    .box h2 {
+        margin-bottom: 5px;
+        font-size: 1.3rem;
+    }
+
+    .box p {
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+}
