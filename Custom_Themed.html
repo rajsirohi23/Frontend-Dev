@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themed Blog Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bs-primary: #6a4df5;
+            --bs-secondary: #f0efff;
+            --bs-font-sans-serif: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--bs-font-sans-serif);
+            background: #fafafa;
+        }
+
+        .custom-header {
+            background: var(--bs-primary);
+            color: white;
+            padding: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="custom-header text-center mb-4">
+        <h1 class="fw-bold">My Blog</h1>
+        <p>Thoughts, Stories & Ideas</p>
+    </header>
+
+    <div class="container">
+
+        <div class="row g-4 mb-4">
+
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm">
+                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h4 class="text-primary fw-bold">Blog Post One</h4>
+                        <p class="text-muted">A short description of the blog post goes here. Simple and clean layout.</p>
+                        <button class="btn btn-primary">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm">
+                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h4 class="text-primary fw-bold">Blog Post Two</h4>
+                        <p class="text-muted">Another small intro about the blog content. Beginner-friendly styling.</p>
+                        <button class="btn btn-primary">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="text-center py-3" style="background: var(--bs-secondary);">
+        <p class="m-0">© 2025 My Blog. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
