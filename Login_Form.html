@@ -1,0 +1,87 @@
+=<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <style>
+    input {
+      padding: 8px;
+      width: 250px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .msg {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    #success {
+      color: green;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Login</h2>
+
+  <input id="user" placeholder="Username">
+  <div id="userMsg" class="msg"></div>
+
+  <input id="pass" type="password" placeholder="Password">
+  <div id="passMsg" class="msg"></div>
+
+  <button onclick="checkLogin()">Login</button>
+
+  <div id="success"></div>
+
+  <script>
+    function checkLogin() {
+      let user = document.getElementById("user")
+      let pass = document.getElementById("pass")
+
+      let userMsg = document.getElementById("userMsg")
+      let passMsg = document.getElementById("passMsg")
+      let success = document.getElementById("success")
+
+      let userRule = /^.{5,}$/
+      let upper = /[A-Z]/
+      let lower = /[a-z]/
+      let num = /[0-9]/
+      let special = /[^A-Za-z0-9]/
+
+      let ok = true
+
+      if (userRule.test(user.value)) {
+        userMsg.innerText = ""
+        user.style.border = "2px solid green"
+      } else {
+        userMsg.innerText = "Minimum 5 characters"
+        user.style.border = "2px solid red"
+        ok = false
+      }
+
+      if (
+        pass.value.length >= 8 &&
+        upper.test(pass.value) &&
+        lower.test(pass.value) &&
+        num.test(pass.value) &&
+        special.test(pass.value)
+      ) {
+        passMsg.innerText = ""
+        pass.style.border = "2px solid green"
+      } else {
+        passMsg.innerText = "Password must have uppercase, lowercase, number, special"
+        pass.style.border = "2px solid red"
+        ok = false
+      }
+
+      if (ok) {
+        success.innerText = "Login Successful"
+      } else {
+        success.innerText = ""
+      }
+    }
+  </script>
+
+</body>
+</html>

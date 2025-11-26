@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Form</title>
+  <style>
+    input {
+      width: 250px;
+      padding: 8px;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Registration</h2>
+
+  <input id="name" placeholder="Name">
+  <div id="nameMsg" class="error"></div>
+
+  <input id="email" placeholder="Email">
+  <div id="emailMsg" class="error"></div>
+
+  <input id="phone" placeholder="Phone">
+  <div id="phoneMsg" class="error"></div>
+
+  <input id="pass" type="password" placeholder="Password">
+  <div id="passMsg" class="error"></div>
+
+  <button onclick="checkForm()">Submit</button>
+
+  <script>
+    function checkForm() {
+      let name = document.getElementById("name")
+      let email = document.getElementById("email")
+      let phone = document.getElementById("phone")
+      let pass = document.getElementById("pass")
+
+      let nameMsg = document.getElementById("nameMsg")
+      let emailMsg = document.getElementById("emailMsg")
+      let phoneMsg = document.getElementById("phoneMsg")
+      let passMsg = document.getElementById("passMsg")
+
+      let onlyLetters = /^[A-Za-z ]+$/
+      let emailCheck = /@/
+      let phoneCheck = /^[0-9]{10}$/
+      let hasUpper = /[A-Z]/
+      let hasNum = /[0-9]/
+      let hasSpecial = /[^A-Za-z0-9]/
+
+      if (onlyLetters.test(name.value)) {
+        name.style.border = "2px solid green"
+        nameMsg.innerText = ""
+      } else {
+        name.style.border = "2px solid red"
+        nameMsg.innerText = "Enter a valid name"
+      }
+
+      if (email.includes("@") && email.value.includes(".")) {
+        email.style.border = "2px solid green"
+        emailMsg.innerText = ""
+      } else {
+        email.style.border = "2px solid red"
+        emailMsg.innerText = "Invalid email"
+      }
+
+      if (phoneCheck.test(phone.value)) {
+        phone.style.border = "2px solid green"
+        phoneMsg.innerText = ""
+      } else {
+        phone.style.border = "2px solid red"
+        phoneMsg.innerText = "Phone must be 10 digits"
+      }
+
+      if (
+        pass.value.length >= 3 &&
+        hasUpper.test(pass.value) &&
+        hasNum.test(pass.value) &&
+        hasSpecial.test(pass.value)
+      ) {
+        pass.style.border = "2px solid green"
+        passMsg.innerText = ""
+      } else {
+        pass.style.border = "2px solid red"
+        passMsg.innerText = "Weak password"
+      }
+    }
+  </script>
+
+</body>
+</html>
