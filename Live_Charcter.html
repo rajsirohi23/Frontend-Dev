@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #counter {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .yellow {
+            color: orange;
+        }
+        .red {
+            color: red;
+        }
+        textarea {
+            width: 300px;
+            height: 120px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Live Character Counter</h2>
+
+    <textarea id="textArea" maxlength="100"></textarea>
+    <div id="counter">100 characters left</div>
+
+    <br>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+        const textArea = document.getElementById("textArea");
+        const counter = document.getElementById("counter");
+        const resetBtn = document.getElementById("resetBtn");
+        const MAX = 100;
+
+        textArea.addEventListener("input", function () {
+            let remaining = MAX - textArea.value.length;
+            counter.textContent = remaining + " characters left";
+            counter.classList.remove("yellow", "red");
+
+            if (remaining <= 20 && remaining > 0) {
+                counter.classList.add("yellow");
+            }
+
+            if (remaining === 0) {
+                counter.classList.add("red");
+            }
+        });
+
+        textArea.addEventListener("keydown", function (e) {
+            if (textArea.value.length >= MAX &&
+                e.key !== "Backspace" &&
+                e.key !== "Delete" &&
+                e.key.length === 1) {
+                e.preventDefault();
+            }
+        });
+
+        resetBtn.addEventListener("click", function () {
+            textArea.value = "";
+            counter.textContent = MAX + " characters left";
+            counter.classList.remove("yellow", "red");
+        });
+    </script>
+
+</body>
+</html>

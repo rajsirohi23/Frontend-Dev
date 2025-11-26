@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product List</title>
+  <style>
+    input {
+      padding: 8px;
+      width: 220px;
+    }
+    button {
+      padding: 6px 10px;
+      margin-left: 5px;
+    }
+    li {
+      margin-top: 8px;
+      list-style: none;
+    }
+    .editBox {
+      width: 180px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Product List Manager</h2>
+
+  <input id="productInput" placeholder="Enter product name">
+  <button onclick="addProduct()">Add</button>
+
+  <ul id="productList"></ul>
+
+  <script>
+    let list = document.getElementById("productList")
+    let activeEdit = null
+
+    function addProduct() {
+      let input = document.getElementById("productInput")
+      let name = input.value.trim()
+
+      if (name === "") return
+
+      let li = document.createElement("li")
+      li.innerHTML =
+        name +
+        ' <button class="edit">Edit</button>' +
+        ' <button class="delete">Delete</button>'
+
+      list.appendChild(li)
+      input.value = ""
+    }
+
+    document.addEventListener("click", function (e) {
+      if (activeEdit && e.target !== activeEdit.box) {
+        endEdit(activeEdit.li, activeEdit.box.value)
+        activeEdit = null
+      }
+    })
+
+    list.addEventListener("click", function (e) {
+      let li = e.target.parentElement
+
+      if (e.target.className === "delete") {
+        li.remove()
+      }
+
+      if (e.target.className === "edit") {
+        if (activeEdit) return
+
+        let oldText = li.firstChild.textContent.trim()
+        let box = document.createElement("input")
+        box.value = oldText
+        box.className = "editBox"
+
+        li.innerHTML = ""
+        li.appendChild(box)
+        box.focus()
+
+        activeEdit = { li: li, box: box }
+      }
+    })
+
+    function endEdit(li, newText) {
+      li.innerHTML =
+        newText +
+        ' <button class="edit">Edit</button>' +
+        ' <button class="delete">Delete</button>'
+    }
+  </script>
+
+</body>
+</html>

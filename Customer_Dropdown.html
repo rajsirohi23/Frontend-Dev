@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Dropdown</title>
+  <style>
+    #dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    #menu {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      border: 1px solid black;
+      background: white;
+      width: 120px;
+      display: none;
+    }
+
+    #menu div {
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    #menu div:hover {
+      background: lightgray;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Custom Dropdown</h2>
+
+  <div id="dropdown">
+    <button id="dropBtn">Select Option</button>
+    <div id="menu">
+      <div>Option 1</div>
+      <div>Option 2</div>
+      <div>Option 3</div>
+    </div>
+  </div>
+
+  <script>
+    let btn = document.getElementById("dropBtn")
+    let menu = document.getElementById("menu")
+
+    btn.addEventListener("click", function () {
+      menu.style.display = menu.style.display === "block" ? "none" : "block"
+    })
+
+    menu.addEventListener("click", function (e) {
+      btn.innerText = e.target.innerText
+      menu.style.display = "none"
+    })
+
+    document.addEventListener(
+      "click",
+      function (e) {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = "none"
+        }
+      },
+      true
+    )
+  </script>
+
+</body>
+</html>

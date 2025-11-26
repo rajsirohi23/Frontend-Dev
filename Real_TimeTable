@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table Filter</title>
+  <style>
+    table, td, th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    #message {
+      margin-top: 10px;
+      color: red;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student List</h2>
+
+  <input id="search" placeholder="Search student">
+
+  <table id="studentTable">
+    <tr>
+      <th>Name</th>
+      <th>Branch</th>
+      <th>CGPA</th>
+    </tr>
+    <tr>
+      <td>Riya</td>
+      <td>CSE</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <td>Aman</td>
+      <td>ECE</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <td>Sneha</td>
+      <td>IT</td>
+      <td>8.7</td>
+    </tr>
+    <tr>
+      <td>Karan</td>
+      <td>CSE</td>
+      <td>7.5</td>
+    </tr>
+  </table>
+
+  <div id="message"></div>
+
+  <script>
+    let search = document.getElementById("search")
+    let table = document.getElementById("studentTable")
+    let message = document.getElementById("message")
+
+    search.addEventListener("input", function () {
+      let text = search.value.toLowerCase()
+      let trs = table.getElementsByTagName("tr")
+      let found = false
+
+      for (let i = 1; i < trs.length; i++) {
+        let row = trs[i].textContent.toLowerCase()
+        if (row.includes(text)) {
+          trs[i].style.display = ""
+          found = true
+        } else {
+          trs[i].style.display = "none"
+        }
+      }
+
+      if (!found) {
+        message.innerText = "No results found"
+      } else {
+        message.innerText = ""
+      }
+    })
+  </script>
+
+</body>
+</html>
