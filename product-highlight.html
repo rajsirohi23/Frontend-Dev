@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.product { padding:10px; border:1px solid #ccc; margin:10px; width:200px; }
+.highlight { background: yellow; }
+.selected { border:2px solid red; }
+.product[data-discount="true"] { background:#d4ffd4; }
+</style>
+</head>
+<body>
+
+<div class="product" data-stock="0" data-discount="true">
+    Product A <span class="fav">❤</span>
+    <div class="details" style="display:none;">Extra Details</div>
+</div>
+
+<div class="product" data-stock="5">
+    Product B <span class="fav">❤</span>
+    <div class="details" style="display:none;">More Info</div>
+</div>
+
+<script>
+document.querySelectorAll(".product").forEach(p => {
+    p.onclick = () => {
+        if (p.dataset.stock === "0") alert("Product out of stock");
+        p.classList.toggle("highlight");
+    };
+
+    p.onmouseover = () => p.querySelector(".details").style.display = "block";
+    p.onmouseout = () => p.querySelector(".details").style.display = "none";
+
+    p.querySelector(".fav").onclick = e => {
+        e.stopPropagation();
+        p.classList.toggle("selected");
+    };
+});
+</script>
+</body>
+</html>

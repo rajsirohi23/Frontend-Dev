@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.q { cursor:pointer; margin:10px 0; }
+.a { display:none; }
+</style>
+</head>
+<body>
+
+<div class="faq">
+    <div class="q">What is JS?</div>
+    <div class="a"><input type="text" placeholder="Your thoughts?"></div>
+
+    <div class="q">What is HTML?</div>
+    <div class="a"><input type="text"></div>
+</div>
+
+<script>
+const qs = document.querySelectorAll(".q");
+const as = document.querySelectorAll(".a");
+
+qs.forEach((q, i) => {
+    q.onclick = () => as[i].style.display = as[i].style.display === "none" ? "block" : "none";
+
+    q.onmouseover = () => q.style.color = "blue";
+    q.onmouseout = () => q.style.color = "black";
+
+    q.ondblclick = () => as.forEach(a => a.style.display = "none");
+});
+
+document.querySelectorAll(".a input").forEach(inp => {
+    inp.onfocus = () => inp.parentElement.previousElementSibling.style.background = "yellow";
+    inp.onblur = () => inp.parentElement.previousElementSibling.style.background = "white";
+});
+</script>
+</body>
+</html>

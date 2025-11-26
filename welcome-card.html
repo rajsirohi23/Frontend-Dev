@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2 id="greet"></h2>
+<p id="welcome">Welcome to our website!</p>
+
+<button id="change">Change Greeting</button>
+<button id="toggle">Toggle Welcome</button>
+
+<script>
+const g = document.getElementById("greet");
+const w = document.getElementById("welcome");
+const c = document.getElementById("change");
+const t = document.getElementById("toggle");
+
+window.onload = () => {
+    let h = new Date().getHours();
+    g.innerText = h < 12 ? "Good Morning" : h < 18 ? "Good Afternoon" : "Good Evening";
+};
+
+c.onclick = () => g.innerText = "Keep going, you're doing great!";
+t.onclick = () => w.style.display = w.style.display === "none" ? "block" : "none";
+g.onclick = () => alert("Greeting clicked");
+</script>
+</body>
+</html>

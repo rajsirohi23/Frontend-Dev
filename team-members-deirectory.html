@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+.member { padding:5px; }
+.highlight { background:yellow; }
+</style>
+</head>
+<body>
+
+<div class="department" id="dev">
+    <h3 class="dept">Development</h3>
+    <div class="manager member">Manager A
+        <div class="member">Dev 1</div>
+        <div class="member">Dev 2</div>
+    </div>
+    <div class="manager member">Manager B
+        <div class="member">Dev 3</div>
+        <div class="member">Dev 4</div>
+    </div>
+</div>
+
+<button id="random">Highlight Siblings</button>
+
+<script>
+$(".manager").click(function() {
+    $(this).children(".member").toggleClass("highlight");
+});
+
+$(".member").hover(
+    function() { $(this).next().css("color","red"); },
+    function() { $(this).next().css("color","black"); }
+);
+
+$(".dept").click(function() {
+    $(this).parent().children().addClass("highlight");
+});
+
+$("#random").click(() => {
+    let all = $(".member");
+    let r = $(all[Math.floor(Math.random()*all.length)]);
+    r.siblings().toggleClass("highlight");
+});
+
+</script>
+</body>
+</html>
